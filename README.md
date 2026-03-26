@@ -6,7 +6,7 @@
 
 ![License](https://img.shields.io/badge/License-Open%20Source-blue.svg)
 ![Platform](https://img.shields.io/badge/Platform-Android%207.0+-green.svg)
-![Version](https://img.shields.io/badge/Version-1.0.0-gold.svg)
+![Version](https://img.shields.io/badge/Version-1.1.0-gold.svg)
 
 **FRUGAILS** is a 100% free, open-source Android application dedicated to global mental health. Based on groundbreaking MIT research (Tsai Laboratory), it delivers precise 40Hz auditory and visual stimuli designed to clear toxic brain proteins and protect neural white matter.
 
@@ -24,9 +24,9 @@
 
 ## 🚀 Download & Installation
 
-Get the latest version directly from the repository:
+Get the latest version directly from our GitHub Releases:
 
-[**📥 Download APK from Google Drive (due to exceeding the 25MB GitHub size limit)**] https://drive.google.com/file/d/1imPgeJALWh6XHFs6XdWzsWTdyTSULSAs/view?usp=sharing
+[**📥 Download FRUGAILS.apk (v1.1)**](https://github.com/PacifAIst/FRUGAILS/releases/download/v1.1/FRUGAILS.apk)
 
 *Note: You may need to enable "Install from Unknown Sources" in your Android settings to install this file.*
 
@@ -50,11 +50,11 @@ Sensory stimulation at 40Hz (Gamma frequency) triggers biological responses rece
 
 For an optimal treatment session:
 
-1.  **Setup:** Wear high-quality headphones. Position the phone **5–20 cm** away from the blinking flashlight.
-2.  **Session:** Close your eyes during the session.
-3.  **Duration:** Start with **10-minute sessions**. Gradually increase to **55 minutes/day** as you notice mental improvements.
-4.  **Optimization:** Use in a dark room. Disable sound effects (ATMOS, SRS, Equalizers) and close other background apps.
-5.  **Timing:** Use shortly after waking up to enhance effectiveness.
+1. **Setup:** Wear high-quality headphones. Position the phone **5–20 cm** away from the blinking flashlight.
+2. **Session:** Close your eyes during the session.
+3. **Duration:** Start with **10-minute sessions**. Gradually increase to **55 minutes/day** as you notice mental improvements.
+4. **Optimization:** Use in a dark room. Disable sound effects (ATMOS, SRS, Equalizers) and close other background apps.
+5. **Timing:** Use shortly after waking up to enhance effectiveness.
 
 ---
 
@@ -89,4 +89,4 @@ For an optimal treatment session:
 
 **Author:** Dr. Manuel Herrador  
 **Email:** [mherrador@ujaen.es](mailto:mherrador@ujaen.es)  
-**Project GitHub:** [PacifAIst/FRUGALIS](https://github.com/PacifAIst/FRUGALIS)
+**Project GitHub:** [PacifAIst/FRUGAILS](https://github.com/PacifAIst/FRUGAILS)
