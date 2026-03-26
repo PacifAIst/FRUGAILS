@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FRUGAILS</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="options">Options</string>
+    <string name="info">Info</string>
+    <string name="time_remaining">Time Remaining</string>
+</resources>
