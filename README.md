@@ -1,7 +1,7 @@
 # FRUGAILS: Auditive and Visual 40Hz Sensory Stimulation
 
 <p align="center">
-  <img src="logo2.png" width="180" alt="FRUGAILS Logo">
+  <img src="./images/logo2.png" width="180" alt="FRUGAILS Logo">
 </p>
 
 ![License](https://img.shields.io/badge/License-Open%20Source-blue.svg)
@@ -15,9 +15,9 @@
 ## 📸 App Showcase
 
 <p align="center">
-  <img src="1.png" width="200" alt="Main Screen">
-  <img src="2.png" width="200" alt="Options Menu">
-  <img src="3.png" width="200" alt="Scientific Info">
+  <img src="./images/1.png" width="200" alt="Main Screen">
+  <img src="./images/2.png" width="200" alt="Options Menu">
+  <img src="./images/3.png" width="200" alt="Scientific Info">
 </p>
 
 ---
