@@ -62,21 +62,44 @@ class StimulationService : Service() {
     }
 
     private fun setupMediaPlayers() {
+        android.util.Log.e("DEBUG_AUDIO", "--- INICIANDO SETUP DE AUDIO ---")
         try {
-            val bgFd = assets.openFd("55.mp3")
-            backgroundPlayer = MediaPlayer().apply {
-                setDataSource(bgFd.fileDescriptor, bgFd.startOffset, bgFd.length)
-                isLooping = true
-                prepare()
+            // 1. Comprobar si Android realmente "ve" el archivo en res/raw
+            val bgId = resources.getIdentifier("audio_55", "raw", packageName)
+            android.util.Log.e("DEBUG_AUDIO", "ID de audio_55: $bgId (Si es 0, Android no encuentra el archivo)")
+
+            // 2. Intentar cargar el archivo de 55 minutos
+            backgroundPlayer = MediaPlayer.create(this, R.raw.audio_55)
+            if (backgroundPlayer == null) {
+                android.util.Log.e("DEBUG_AUDIO", "🚨 FATAL: backgroundPlayer es NULL. El MP3 de 83MB no es compatible, está corrupto o pesa demasiado para la RAM.")
+            } else {
+                backgroundPlayer?.isLooping = true
+                android.util.Log.e("DEBUG_AUDIO", "✅ backgroundPlayer cargado en memoria con éxito.")
+
+                // Chivato de errores durante la reproducción
+                backgroundPlayer?.setOnErrorListener { _, what, extra ->
+                    android.util.Log.e("DEBUG_AUDIO", "🚨 ERROR REPRODUCIENDO BG: what=$what extra=$extra")
+                    true
+                }
             }
-            bgFd.close()
-            val dingFd = assets.openFd("ding.mp3")
-            dingPlayer = MediaPlayer().apply {
-                setDataSource(dingFd.fileDescriptor, dingFd.startOffset, dingFd.length)
-                prepare()
+
+            // 3. Intentar cargar el ding
+            dingPlayer = MediaPlayer.create(this, R.raw.audio_ding)
+            if (dingPlayer == null) {
+                android.util.Log.e("DEBUG_AUDIO", "🚨 FATAL: dingPlayer es NULL.")
+            } else {
+                android.util.Log.e("DEBUG_AUDIO", "✅ dingPlayer cargado en memoria con éxito.")
             }
-            dingFd.close()
-        } catch (e: Exception) { e.printStackTrace() }
+
+            // 4. Comprobar el volumen interno del simulador a la fuerza
+            val audioManager = getSystemService(Context.AUDIO_SERVICE) as android.media.AudioManager
+            val currentVolume = audioManager.getStreamVolume(android.media.AudioManager.STREAM_MUSIC)
+            val maxVolume = audioManager.getStreamMaxVolume(android.media.AudioManager.STREAM_MUSIC)
+            android.util.Log.e("DEBUG_AUDIO", "🔊 Volumen Multimedia del sistema: $currentVolume de $maxVolume")
+
+        } catch (e: Exception) {
+            android.util.Log.e("DEBUG_AUDIO", "💥 CRASH EN SETUP: ${e.message}", e)
+        }
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -101,7 +124,12 @@ class StimulationService : Service() {
 
         startForegroundServiceNotification()
 
-        if (!flashOnly) backgroundPlayer?.start()
+        if (!flashOnly) {
+            android.util.Log.e("DEBUG_AUDIO", "▶️ Orden de START recibida. ¿Es el reproductor null? -> ${backgroundPlayer == null}")
+            backgroundPlayer?.start()
+        } else {
+            android.util.Log.e("DEBUG_AUDIO", "⚠️ No se hace play porque flashOnly es TRUE")
+        }
         if (!audioOnly) startFlicker(slowerFlicker)
 
         timerJob?.cancel()
