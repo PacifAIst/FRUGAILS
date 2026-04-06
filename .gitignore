@@ -13,5 +13,4 @@
 .externalNativeBuild
 .cxx
 local.properties
-app/src/main/res/raw/audio_55.mp3
 app/release/
