@@ -30,6 +30,10 @@ Get the latest version directly from our GitHub Releases:
 
 *Note: You may need to enable "Install from Unknown Sources" in your Android settings to install this file.*
 
+OR
+
+[![Get it on Google Play](https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png)](https://play.google.com/store/apps/details?id=com.mhm.frugails)
+
 ---
 
 ## 🧠 Scientific Basis (The Mechanisms)
