@@ -91,3 +91,8 @@ For an optimal treatment session:
 **Author:** Dr. Manuel Herrador  
 **Email:** [mherrador@ujaen.es](mailto:mherrador@ujaen.es)  
 **Project GitHub:** [PacifAIst/FRUGAILS](https://github.com/PacifAIst/FRUGAILS)
+
+---
+
+<p align="center">Made with ❤️ for the Local AI Community by PacifAIst</p>
+
